@@ -1,37 +1,59 @@
 # PlatinumWings – Luxury Private Jet Booking Platform & Business System Design
 
-[![Figma Prototype](https://img.shields.io/badge/Figma-Prototype-F24E1E?logo=figma&logoColor=white)](https://www.figma.com/proto/NN3OKzkvAveVYPv5JvkVvs/Login?node-id=890-1107&t=JUG2TDHjGOo7JwKj-1&starting-point-node-id=743%3A974&show-proto-sidebar=1)
+[![Figma Design](https://img.shields.io/badge/Figma-Design_Workspace-F24E1E?logo=figma&logoColor=white)](https://www.figma.com/design/NN3OKzkvAveVYPv5JvkVvs/Login?node-id=0-1&p=f&t=pV9AmxhKATXMimds-0)
 [![University](https://img.shields.io/badge/University-UNIPR-003C71?logo=university&logoColor=white)](https://www.unipr.it)
 [![Obsidian](https://img.shields.io/badge/Obsidian-Notes-7C4DFF?logo=obsidian&logoColor=white)](https://obsidian.md)
 
-This repository contains the system design, theoretical documentation, user experience wireframes, and interactive prototype link for **PlatinumWings**, a high-end private jet booking platform. 
+This repository contains the complete Feasibility Study, System Architecture, UI/UX Wireframe specifications, and the interactive Figma design workspace for **PlatinumWings**. 
 
-The project was developed as a B.Sc. final project for the **Sistemi Informativi e Gestione d'Impresa (SIGI)** (Information Systems and Business Management) course at the **University of Parma**. It combines rigorous IT governance and corporate management theory with practical UI/UX design and database-backed workflow logic.
+Developed as a B.Sc. project for the **Sistemi Informativi e Gestione d'Impresa (SIGI)** (Information Systems and Business Management) course at the **University of Parma**, this project bridges corporate software design, IT governance, and financial feasibility models with high-fidelity UI/UX design.
 
 ---
 
-## ✈️ Project Overview: PlatinumWings
+## ✈️ Corporate Context: PlatinumWings
 
-**PlatinumWings** is a luxury private jet rental service that integrates a traveler booking app with a comprehensive back-office management dashboard (Enterprise Resource Planning / CRM) for administrators, dispatchers, pilots, and customer support representatives.
+Founded in **2014 in Parma** by four aviation enthusiasts, **PlatinumWings** started as a boutique private jet charter firm. The company built its reputation on luxury aircraft, high-quality bespoke services, and close client communication. Historically, to minimize IT costs, PlatinumWings operated on a manual, operator-led booking model. 
 
-The project structure is broken down into two main components:
-1. **Interactive Figma Prototype**: A high-fidelity UI/UX prototype mapping out the entire passenger booking journey and the admin management console.
-2. **System & Business Analysis**: A theoretical analysis of the enterprise system's lifecycle, sourcing strategies, organizational impacts, and alignment with course principles.
+### The Obsolete Legacy Process
+1. **Consultation**: Customers initiated bookings via a phone call with a dedicated operator team.
+2. **Internal Coordination**: Operators checked jet availability using a basic internal coordination tool and checked vendor availability for culinary/chauffeur packages. Bookings were logged in a local DBMS.
+3. **Financial Validation**: The operator collected itemized costs and submitted them to the accounting department.
+4. **Approval**: Accounting drafted a quote for the executive manager, who reviewed it, applied potential discounts, and signed off.
+5. **Payment**: The customer received an email containing the quote and bank details (IBAN). They had **three days to pay via bank transfer** (during which they held right of first refusal) or the booking was cancelled.
+
+---
+
+## ⚠️ The Digital Urgency: 5 Critical Bottlenecks
+
+As the company scaled, this manual booking process created severe operational inefficiencies:
+1. **Obsolete Booking Model**: Competitors offered instant online booking. The manual phone-based flow led to high client drop-off.
+2. **Peak Season Saturation**: The 24/7 operator team was overwhelmed during busy holiday periods, reducing customer service quality.
+3. **Outdated Management Software**: The legacy system's unintuitive UI led to long training times for new hires.
+4. **Inter-departmental Bottlenecks**: Booking a single flight required manual hand-offs between operators, accounting, management, and external suppliers, slowing down response times.
+5. **Zero Customer Autonomy**: Clients could not view available jets, choose optional packages, or see live pricing changes in real-time.
+
+---
+
+## 🚀 The Digital Transformation Strategy
+
+To address these bottlenecks, PlatinumWings designed a unified digital ecosystem composed of:
+1. **Customer-Facing Web & Mobile Apps**: Standardizing reservations with real-time feedback and dynamic cost transparency.
+2. **Modern Admin Panel (Gestionale Admin)**: An intuitive, role-based CRM/ERP to streamline scheduling, analytics, support, and fleet logistics.
+3. **Cloud Sourcing Transition**: Moving from local database management to a secure, outsourced cloud architecture (AWS/Google Cloud).
 
 ---
 
 ## 🗺️ System Architecture & User Flows
 
-The interactive interface is detailed in [Wireframe.pdf](file:///C:/Users/Anton/Desktop/SIGI/Wireframe.pdf). It is split into two primary operational areas:
+The UI/UX wireframes, documented in [Wireframe.pdf](file:///C:/Users/Anton/Desktop/SIGI/Wireframe.pdf), outline the application workflows:
 
-### 1. Customer-Facing Web & Mobile Application
-Designed for high-net-worth individuals, providing a seamless, end-to-end luxury travel booking process:
-* **Dynamic Booking Engine**: Users can search and book one-way, round-trip, or multi-city private flights by selecting dates, times, and traveler counts.
-* **Smart Fleet Selection**: A comprehensive gallery and specifications for the three distinct private jet categories in the catalog.
+### 1. Customer Booking Application (Web & iOS/Android)
+* **Dynamic Search Box**: Book one-way, round-trip, or multi-city flights by selecting date, time, and passenger count.
+* **Smart Fleet Selector**: High-fidelity gallery and specifications for the three distinct private jet categories in the catalog.
 * **Real-Time Dynamic Pricing**: Cost estimations calculate pricing based on seasonal demand density (e.g., peak holidays like New Year's Eve), jet class, and operational relocation costs.
 * **Bespoke Luxury Customizations (Add-ons)**:
-  * *Private Chauffeur Service*: Bookable for specific days or the entire duration of the trip (with complimentary basic airport transfers included by default).
-  * *On-board Dining Experience*: Selection of curated Italian, Mexican, or Japanese menus for the outbound and return journeys.
+  * *Private Chauffeur*: Bookable for the entire trip or specific days (with complimentary basic airport transfers included by default).
+  * *On-board Dining*: Curated Italian, Mexican, or Japanese menus for the outbound and return journeys (with allergen logging).
   * *Exclusive Hotel Partnerships*: Integrated pop-ups linking to partner 5-star and 7-star luxury hotels offering exclusive client discounts.
 * **Cost Optimization Engine**: A smart dialog recommending alternative travel dates (cheaper slots) to help passengers optimize flight costs.
 * **Passenger & Security Details**: Unified entry for passenger titles, names, and fiscal codes, with options to save frequent flyers and request accessibility assistance.
@@ -52,57 +74,101 @@ A unified interface dividing tasks between corporate administrators and customer
 
 ---
 
-## 📚 Systems Theory & Course Integration
+## 📊 Feasibility Study: Sourcing & Infrastructure
 
-The theoretical analysis, detailed in [SIGI.pdf](file:///C:/Users/Anton/Desktop/SIGI/SIGI.pdf), bridges the software implementation with modern corporate Information Systems (IS) principles:
+The theoretical analysis, detailed in [Sigi_Project.pdf](file:///C:/Users/Anton/Desktop/SIGI/Sigi_Project.pdf), evaluates the hardware procurement, licensing, and operating expenses of the two primary hosting options:
 
-```
-                  ▲
-                 / \
-                /   \      Strategic Level (C-Level, Planning, S.d.F., Budgeting)
-               /     \
-              /       \
-             /─────────\
-            /           \    Tactical Level (Middle Mgmt, Fleet Maintenance, Analytics)
-           /             \
-          /───────────────\
-         /                 \ Operational Level (Live Crew Scheduling, Ticket Resolution)
-        /                   \
-       /─────────────────────\
-```
+### Sourcing Cost Analysis: In-House vs. Outsourced Hosting (Cloud)
 
-### 1. Anthony's Organizational Pyramid
-The system aligns operations across three management tiers:
-* **Operational Level**: Executed by ticketing agents, pilots, and support operators using real-time flight dashboards, checking jet availability, resolving support chats, and checking traveler IDs.
-* **Tactical Level**: Handled by department managers monitoring annual sales reports, planning scheduled jet maintenance windows, analyzing model popularity, and managing crew shift rotations.
-* **Strategic Level**: Managed by the executive suite making long-term fleet procurement decisions, evaluating outsourcing/sourcing strategies, and initiating Feasibility Studies (S.d.F.) for system upgrades.
+#### Option 1: In-House Server Hosting
+Purchasing and maintaining physical server infrastructure locally.
+* **Capital Expenditures (CapEx) - Initial Hardware**:
+  * Fujitsu Primergy RX2530 Medium Server: **~5,000€**
+  * 3 QNAP TR-004 NAS (Disaster Recovery) + 12 WD Red Plus 4TB Disks: **1,920€** *(720€ NAS + 1,200€ Disks)*
+  * RS PRO 3000VA Uninterruptible Power Supply (UPS): **1,297.43€**
+  * Siemens Communications Router (6GK5816-1BA00-2AA2): **1,207.80€**
+  * WatchGuard Firewall (Firebox M290): **2,095.98€**
+  * 4 Cisco Managed Switches (WS-C2960S-48LPS-L): **412€**
+  * Hisense Easy Smart 12000 Server Room Air Conditioner: **390.90€**
+  * Annual SSL Encryption Certificate: **$50 - $200 (approx. 150€)**
+* **Operational Expenditures (OpEx) - Annual Costs**:
+  * Gigabit Internet Service Provider (Vodafone Business): **600€/year**
+  * Server Room Electricity Bill: **~800€/year**
+  * Technical Staffing & Training: **~8,000€ - 10,000€/year**
+  * System Maintenance & Software Updates: **~10,000€ - 15,000€/year**
+* **Financial Totals**:
+  * **Initial CapEx**: **12,500€ - 18,000€**
+  * **Annual OpEx**: **15,000€ - 19,600€**
 
-### 2. Value Chain & Disintermediation (Porter's Model)
-* **Value Chain Optimization**: ICT integration reduces friction across inbound logistics (maintenance supplies), operations (flight booking & dispatch), outbound logistics (passenger transport), and service (24/7 support chat).
-* **Disintermediation**: Leveraging direct-to-consumer digital channels (direct figma prototype app/web) bypasses traditional travel agencies and distribution intermediaries, lowering operational costs and maximizing profit margins.
+#### Option 2: Cloud Hosting / Outsourcing (SELECTED STRATEGY)
+Leveraging flat-fee/consumption-based VPS hosting from cloud providers (e.g., AWS, Google Cloud).
+* **Capital Expenditures (CapEx) - Initial Setup**:
+  * Data Migration & System Integration (One-time Software House Fee): **5,000€ - 7,000€**
+  * Internal Security Hardware (Siemens Router, WatchGuard Firewall, Cisco Switches, 2 Mediacom 850VA UPS): **~3,700€**
+  * *Optional*: 3 QNAP NAS + WD Red Disks (for local backup replication): **1,920€**
+* **Operational Expenditures (OpEx) - Annual Costs**:
+  * Cloud Hosting Fee (AWS/Google Cloud VPS Flat Package): **3,000€ - 6,500€/year**
+  * Gigabit Internet Service Provider (Vodafone Business): **600€/year**
+* **Financial Totals**:
+  * **Initial CapEx**: **~8,800€** *(including network hardware and one-time migration)*
+  * **Annual OpEx**: **5,600€ - 7,000€**
 
-### 3. Information Intensity (Porter-Millar Grid)
-Under the Porter-Millar framework, private aviation is classified as a service with high information intensity. PlatinumWings shifts into the premium quadrant by adding information to the physical product—enriching the core transport service with customizable digital experiences (catering, chauffeur logs, verified payment profiles, and partner hotel discounts).
-
-### 4. Sourcing & IT Governance Strategy
-The system outlines a clear IT governance roadmap for software acquisition and staffing:
-* **Sourcing Spectrum**: Details the trade-offs of *Outsourcing* (lowering fixed costs but risking provider lock-in/knowledge loss) versus *Insourcing*.
-* **Contractual Frameworks**: Employs *Contract-out* for standardized external integrations (e.g., Nexi/PayPal payment gateway), *Preferred Contractor* relations for long-term support infrastructure, *Buy-in* contracts to temporarily fill resource gaps on specialized modules, and *Preferred Supplier* structures for long-term developer collaborations.
-
-### 5. Feasibility Study (Studio di Fattibilità - S.d.F.)
-Any updates to the system follow a structured lifecycle:
-1. **Objectives & Functional Specifications**: Aligning operational requirements with budget and timeline constraints.
-2. **System Design & Organizational Impact Analysis**: Designing server architectures, evaluating scalability, reliability, and security while ensuring minimal friction for employees transitioning to the new systems.
-3. **Economic Valuation**: Conducting cost-benefit analysis (comparing one-time acquisition costs vs. recurring maintenance/licensing fees, e.g. SaaS vs. Enterprise server licenses).
-4. **Implementation Decision**: Generating the final project specification to guide technical developers, project leaders, and end-user onboarding.
+> [!TIP]
+> **Outsourcing Sourcing Strategy**: The feasibility study selected Option 2. Outsourcing minimizes upfront Capital Expenditures, bypasses complex IT recruiting, ensures 24/7 provider-backed server recovery (SLA), and scales dynamically with seasonal demand.
 
 ---
 
-## 🛠️ Repository Contents
+## 📅 Software Development Timelines & Costs
+
+The development plan splits the application builds into distinct project phases, calculated by software engineering complexity:
+
+| Product | Phase | Complexity Metrics (Simple / Intermed. / Hard) | Days | Development Cost | Annual Maintenance |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| **Mobile App** | Designing | 10 / 7 / 2 | 14 | 5,600€ | - |
+| | Realization | 5 / 10 / 4 | 37 | 11,100€ | - |
+| | Verification | 14 / 5 / 2 | 14 | 3,500€ | - |
+| *App Total* | | | **65 days** | **20,200€** | **4,040€** |
+| **Web Portal** | Designing | 4 / 6 / 15 | 23 | 9,200€ | - |
+| | Realization | 10 / 8 / 7 | 47 | 14,100€ | - |
+| | Verification | 5 / 10 / 10 | 22.5 | 5,625€ | - |
+| *Web Total* | | | **92.5 days** | **28,925€** | **5,785€** |
+| **COMBINED** | | | **157.5 days** | **49,125€** | **9,825€** |
+
+---
+
+## 🔍 Market Benchmarking
+
+To optimize the system design, the team analyzed competitors to resolve key industry challenges:
+* **Booking Complexity**: Unlike legacy booking portals that require extensive multi-page forms, PlatinumWings implements a simple, progressive stepper checkout with instant email confirmations.
+* **Pricing Transparency**: Solves the issue of hidden surcharges in luxury rentals. Standard rates are visible upfront, and dynamic surcharges (worst-case pricing buffer ensuring high margins, verified by accounting) are calculated in real-time.
+* **User Navigation**: Implements a sticky, persistent Navbar (benchmarked against luxury brands like VistaJet and budget lines like Ryanair) to ensure easy site exploration.
+* **Aesthetic Appeal**: Avoids stock templates by using custom, AI-generated imagery and a clean, luxury dark-mode theme to appeal to high-net-worth clients.
+
+---
+
+## 📚 Systems Theory & Course Integration
+
+The project applies key concepts from the B.Sc. Sistemas Informativi course syllabus:
+* **Anthony's Organizational Pyramid**:
+  * *Operational level*: Live crew dispatch, pilot shift scheduling, passenger ID verification, and support ticket chat logs.
+  * *Tactical level*: Fleet maintenance scheduling, sales analytics dashboard, and marketing performance tracking.
+  * *Strategic level*: Cloud hosting sourcing strategy, fleet procurement plans, and systems feasibility studies (S.d.F.).
+* **Porter's Value Chain**: How the new digital platform optimizes Operations (automated scheduling), Marketing & Sales (direct-to-consumer app booking), and Service (24/7 AI-assisted support).
+* **Disintermediation**: Bypassing traditional retail brokers to offer booking directly to customers, maximizing operational profit margins.
+* **Porter-Millar Information Intensity**: Transforming a physical aviation service into an information-rich experience by integrating custom catering, chauffeur scheduling, and partner hotel discounts directly into the booking process.
+* **IT Sourcing Frameworks**:
+  * *Contract-Out*: Nexi/PayPal/Apple Pay integration for secure payment processing.
+  * *Preferred Contractor*: Long-term 24/7 IT helpdesk SLA.
+  * *Buy-In*: Temporary software engineers hired for specific specialized integrations.
+  * *Preferred Supplier*: Long-term software house contract for future app upgrades.
+
+---
+
+## 📂 Repository Structure
 
 * [README.md](file:///C:/Users/Anton/Desktop/SIGI/README.md) - This document.
-* [SIGI.pdf](file:///C:/Users/Anton/Desktop/SIGI/SIGI.pdf) - Detailed systems management, outsourcing, IT governance, and feasibility study lecture notes (Exported from Obsidian.md).
-* [Wireframe.pdf](file:///C:/Users/Anton/Desktop/SIGI/Wireframe.pdf) - Full UI/UX description of the booking application and admin dashboard flows.
+* [Sigi_Project.pdf](file:///C:/Users/Anton/Desktop/SIGI/Sigi_Project.pdf) - Detailed systems management feasibility study, including financial costs, risk analysis, and hosting evaluations.
+* [Wireframe.pdf](file:///C:/Users/Anton/Desktop/SIGI/Wireframe.pdf) - UI/UX user flows, interface wireframes, and dashboard specifications.
 
 ---
 
